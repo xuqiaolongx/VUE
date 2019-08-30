@@ -1,49 +1,40 @@
 <template>
-  <input v-bind:value="searchText" >
+<div @click="hannleClick">
+  <el-button @click="visible = true">Button</el-button>
+</div>
 </template>
 
 <script>
-function Person (firstName, lastName) {
-  this.firstName = firstName
-  this.lastName = lastName
-}
+import { constants } from 'crypto';
 export default {
   name: 'HelloWorld',
-  inheritAttrs: false,
   props: {
     msg: {
       type: String,
-       default: () => {
-        /* eslint-disable */
-        console.log(132)
-        return ''
-      },
       validator: function (value) { // 这个值必须匹配下列字符串中的一个
-        console.log(value+'7777') 
         return 1
       }
     },
-    author: {
-      default: () => {
-        /* eslint-disable */
-        console.log(132)
-        return ''
-      },
-    }
+  },
+  created () {
+    console.log(this.$attrs)
   },
   data: function () {
-    console.log(this.$attrs)
     return {
-      searchText: 0
+      sun:'sun',
+      selected:'',
+      picked:'',
+      checkedNames: false,
+      $_searchText: 456,
+      searchText: 0,
+      checked: false,
     }
   },
   methods: {
-    // input (e) {
-      // console.log(this)
-      // console.log(e) // 事件对象
-      // console.log(e.data) // 刚刚输入的字符
-      // console.log(e.target.value) // 现在的字符
-    // }
+    hannleClick () {
+      this.$emit('update:auth', 'IIIII')
+      console.log(this.$attrs)
+    }
   }
 }
 </script>
