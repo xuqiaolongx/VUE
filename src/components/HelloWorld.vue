@@ -1,6 +1,11 @@
 <template>
-<div @click="hannleClick">
-  <el-button @click="visible = true">Button</el-button>
+<div>
+    <el-radio-group v-model="radio6" fill='green' text-color="red">
+      <el-radio-button label="上海"></el-radio-button>
+      <el-radio-button label="北京"></el-radio-button>
+      <el-radio-button label="广州"></el-radio-button>
+      <el-radio-button label="深圳"></el-radio-button>
+    </el-radio-group>
 </div>
 </template>
 
@@ -21,6 +26,7 @@ export default {
   },
   data: function () {
     return {
+      radio6: '',
       sun:'sun',
       selected:'',
       picked:'',
