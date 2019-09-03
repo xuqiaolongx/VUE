@@ -1,7 +1,6 @@
 <template>
         <el-table
           :data="tableData"
-          :row-style="fun1"
           style="width: 100%">
           <el-table-column type="index" width="50" :index="indexMethod"></el-table-column>
           <el-table-column
@@ -39,7 +38,7 @@
           </el-table-column>
         </el-table>
       </template>
-      
+
       <script>
         export default {
           data() {
@@ -67,6 +66,11 @@
               }]
             }
           },
+          beforeCreate () {
+            console.log(this.$router)
+            console.log(this.$route)
+            console.log(this.$route.params.pathMatch)
+          },
           methods: {
             formatter(row, column) {
               return row.address;
@@ -75,10 +79,10 @@
               return row.tag === value;
             },
             showData(data) {
-                console.log(data)
+                // console.log(data)
             },
             indexMethod(index) { return index * 2; },
-            fun1 (row, rowIndex) {console.log(row, rowIndex)}
+            // fun1 (row, rowIndex) {console.log(row, rowIndex)}
           }
         }
       </script>
