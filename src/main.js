@@ -11,6 +11,7 @@ Vue.config.productionTip = false
 
 import HelloWorld from './components/HelloWorld.vue'
 import From from './components/From'
+import Form2 from './components/Form2'
 import Select from './components/Select'
 import Table from './components/Table'
 import Table_1 from './components/Table_1'
@@ -24,18 +25,10 @@ const router = new Vrouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    {path: '/com-*', component: Table, meta: {test1: true,b: {a:1}},
-    children: [
-      {path: 'aa', component: HelloWorld,
-        children: [
-          {path: 'aa', component: HelloWorld},
-        ]
-      },
-      {path: 'bb', component: HelloWorld}
-    ]},
     {path: '/', component: HelloWorld},
     {path:'/form/table',component:Table},
     {path:'/form/table1',component:Table_1},
+    {path:'/form/form2',component:Form2},
     {path: '*', component: NotFind},
   ]
 })
